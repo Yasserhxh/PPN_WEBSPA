@@ -4,7 +4,8 @@
 
 [data-kt-app-layout="light-sidebar"] {
     .app-sidebar {
-        background-color: var(--#{$prefix}app-sidebar-light-bg-color);
+        background: linear-gradient(137.82deg, #5c61a3, #105ba6 100%, #09203f 0);
+        //background-color: red;
         border-right: 1px solid var(--#{$prefix}gray-200);
 
         .scroll-y,

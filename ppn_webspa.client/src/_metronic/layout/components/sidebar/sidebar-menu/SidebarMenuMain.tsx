@@ -8,10 +8,11 @@ const SidebarMenuMain = () => {
 
   return (
     <>
+     
       <SidebarMenuItem
         to='/dashboard'
         icon='element-11'
-        title={intl.formatMessage({id: 'MENU.DASHBOARD'})}
+        title='Accueil'
         fontIcon='bi-app-indicator'
       />
       <SidebarMenuItem to='/builder' icon='switch' title='Layout Builder' fontIcon='bi-layers' />

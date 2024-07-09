@@ -69,9 +69,8 @@ const MenuInnerWithSub: FC<Props & WithChildren> = ({
       <div
         className={clsx(
           'menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown',
-          isMega ? 'w-100 w-lg-850px p-5 p-lg-5' : 'menu-rounded-0 py-lg-4 w-lg-225px'
+          isMega ? 'w-100 w-lg-550px p-5 p-lg-5' : 'menu-rounded-0 py-lg-4 w-lg-225px'
         )}
-        data-kt-menu-dismiss='true'
       >
         {children}
       </div>

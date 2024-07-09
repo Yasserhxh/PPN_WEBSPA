@@ -48,53 +48,26 @@ const SidebarLogo = (props: PropsType) => {
   }, [toggleRef, props.sidebarRef])
 
   return (
-    <div className='app-sidebar-logo px-6' id='kt_app_sidebar_logo'>
-      <Link to='/dashboard'>
-        {config.layoutType === 'dark-sidebar' ? (
-          <img
-            alt='Logo'
-            src={toAbsoluteUrl('/media/logos/default-dark.svg')}
-            className='h-25px app-sidebar-logo-default'
-          />
-        ) : (
-          <>
-            <img
-              alt='Logo'
-              src={toAbsoluteUrl('/media/logos/default.svg')}
-              className='h-25px app-sidebar-logo-default theme-light-show'
-            />
-            <img
-              alt='Logo'
-              src={toAbsoluteUrl('/media/logos/default-dark.svg')}
-              className='h-25px app-sidebar-logo-default theme-dark-show'
-            />
-          </>
-        )}
-
-        <img
-          alt='Logo'
-          src={toAbsoluteUrl('/media/logos/default-small.svg')}
-          className='h-20px app-sidebar-logo-minimize'
-        />
-      </Link>
-
-      {(appSidebarDefaultMinimizeDesktopEnabled || appSidebarDefaultCollapseDesktopEnabled) && (
-        <div
-          ref={toggleRef}
-          id='kt_app_sidebar_toggle'
-          className={clsx(
-            'app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary h-30px w-30px position-absolute top-50 start-100 translate-middle rotate',
-            {active: appSidebarDefaultMinimizeDefault}
-          )}
-          data-kt-toggle='true'
-          data-kt-toggle-state={toggleState}
-          data-kt-toggle-target='body'
-          data-kt-toggle-name={`app-sidebar-${toggleType}`}
-        >
-          <KTIcon iconName='black-left-line' className='fs-3 rotate-180 ms-1' />
-        </div>
-      )}
-    </div>
+			  <div className="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
+				  {/*begin::Logo image*/}
+				  <a href="dashboard.html">
+					  <img alt="Logo" src="media/logos/logo.svg" className="h-40px app-sidebar-logo-default" />
+					  <img alt="Logo" src="media/logos/logo-small.svg"
+						  className="h-30px app-sidebar-logo-minimize" />
+				  </a>
+				  {/*end::Logo image*/}
+				  {/*begin::Sidebar toggle*/}
+				  <div id="kt_app_sidebar_toggle"
+					  className="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary h-30px w-30px position-absolute top-50 start-100 translate-middle rotate"
+					  data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body"
+					  data-kt-toggle-name="app-sidebar-minimize">
+					  <i className="ki-duotone ki-black-right-line fs-3 rotate-180">
+						  <span className="path1"></span>
+						  <span className="path2"></span>
+					  </i>
+				  </div>
+				  {/*end::Sidebar toggle*/}
+			  </div>
   )
 }
 

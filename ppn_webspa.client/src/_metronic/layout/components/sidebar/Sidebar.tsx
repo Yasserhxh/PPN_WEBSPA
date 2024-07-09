@@ -18,6 +18,7 @@ const Sidebar = () => {
     return null
   }
 
+
   return (
     <>
       {(config.layoutType === 'dark-sidebar' || config.layoutType === 'light-sidebar') && (
@@ -33,6 +34,7 @@ const Sidebar = () => {
       )}
     </>
   )
+
 }
 
 const updateDOM = (config: ILayout) => {

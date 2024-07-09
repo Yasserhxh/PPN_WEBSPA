@@ -10,93 +10,185 @@ export function MenuInner() {
       <MenuItem title={intl.formatMessage({id: 'MENU.DASHBOARD'})} to='/dashboard' />
       <MenuItem title='Layout Builder' to='/builder' />
       <MenuInnerWithSub
-        title='Crafted'
+        title='Niveau 2'
+        isMega
         to='/crafted'
         menuPlacement='bottom-start'
-        menuTrigger='click'
+        menuTrigger={`{default:'click', lg: 'hover'}`}
       >
-        {/* PAGES */}
-        <MenuInnerWithSub
-          title='Pages'
-          to='/crafted/pages'
-          fontIcon='bi-archive'
-          hasArrow={true}
-          menuPlacement='right-start'
-          menuTrigger={`{default:'click', lg: 'hover'}`}
-        >
-          <MenuInnerWithSub
-            title='Profile'
-            to='/crafted/pages/profile'
-            hasArrow={true}
-            hasBullet={true}
-            menuPlacement='right-start'
-            menuTrigger={`{default:'click', lg: 'hover'}`}
-          >
-            <MenuItem to='/crafted/pages/profile/overview' title='Overview' hasBullet={true} />
-            <MenuItem to='/crafted/pages/profile/projects' title='Projects' hasBullet={true} />
-            <MenuItem to='/crafted/pages/profile/campaigns' title='Campaigns' hasBullet={true} />
-            <MenuItem to='/crafted/pages/profile/documents' title='Documents' hasBullet={true} />
-            <MenuItem
-              to='/crafted/pages/profile/connections'
-              title='Connections'
-              hasBullet={true}
-            />
-          </MenuInnerWithSub>
-          <MenuInnerWithSub
-            title='Wizards'
-            to='/crafted/pages/wizards'
-            hasArrow={true}
-            hasBullet={true}
-            menuPlacement='right-start'
-            menuTrigger={`{default:'click', lg: 'hover'}`}
-          >
-            <MenuItem to='/crafted/pages/wizards/horizontal' title='Horizontal' hasBullet={true} />
-            <MenuItem to='/crafted/pages/wizards/vertical' title='Vertical' hasBullet={true} />
-          </MenuInnerWithSub>
-        </MenuInnerWithSub>
+										{/*begin:Pages menu*/}
+										<div className="menu-active-bg px-8 px-lg-0">
+											{/*begin:Tabs nav*/}
+											<div className="d-flex w-100 overflow-auto">
+												<ul
+													className="nav nav-stretch nav-line-tabs fw-bold fs-6 p-0 p-lg-10 flex-nowrap flex-grow-1">
+													{/*begin:Nav item*/}
+													<li className="nav-item mx-lg-1">
+														<a className="nav-link py-3 py-lg-6 active text-active-primary"
+															href="#" data-bs-toggle="tab"
+															data-bs-target="#kt_app_header_menu_pages_pages">classe 
+															A</a>
+													</li>
+													{/*end:Nav item*/}
+													{/*begin:Nav item*/}
+													<li className="nav-item mx-lg-1">
+														<a className="nav-link py-3 py-lg-6 text-active-primary" href="#"
+															data-bs-toggle="tab"
+															data-bs-target="#kt_app_header_menu_pages_account">classe
+															B</a>
+													</li>
+													{/*end:Nav item*/}
+													{/*begin:Nav item*/}
+													<li className="nav-item mx-lg-1">
+														<a className="nav-link py-3 py-lg-6 text-active-primary" href="#"
+															data-bs-toggle="tab"
+															data-bs-target="#kt_app_header_menu_pages_authentication">classe
+															C</a>
+													</li>
+													{/*end:Nav item*/}
+												</ul>
+											</div>
+											{/*end:Tabs nav*/}
+											{/*begin:Tab content*/}
+											<div className="tab-content py-4 py-lg-8 px-lg-7">
+												{/*begin:Tab pane*/}
+												<div className="tab-pane active w-lg-350px"
+													id="kt_app_header_menu_pages_pages">
+													{/*begin:Row*/}
+													<div className="row">
+														{/*begin:Col*/}
+														<div className="col-lg-12 mb-3">
+															{/*begin:Menu item*/}
+															<div className="menu-item p-0 m-0">
+																{/*begin:Menu link*/}
+																<a href="#0"
+																	className="menu-link check justify-content-between">
+																	<span
+																		className="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																		<i
+																			className="ki-duotone ki-element-11 text-primary fs-1">
+																			<span className="path1"></span>
+																			<span className="path2"></span>
+																			<span className="path3"></span>
+																			<span className="path4"></span>
+																		</i>
+																	</span>
+																	<span className="d-flex flex-column"
+																		style={{marginLeft: "-45px"}}>
+																		<span className="fs-6 fw-bold text-gray-800">Accéder
+																			au cours</span>
+																		<span className="fs-7 fw-semibold text-muted">24
+																			Élèves</span>
+																	</span>
+																	<div
+																		className="progress w-100px h-7px bg-success menu-progress bg-opacity-50 mt-7">
+																		<div className="progress-bar bg-success"
+																			role="progressbar" style={{width: "50%"}}></div>
+																	</div>
+																</a>
 
-        {/* ACCOUNT */}
-        <MenuInnerWithSub
-          title='Accounts'
-          to='/crafted/accounts'
-          fontIcon='bi-person'
-          hasArrow={true}
-          menuPlacement='right-start'
-          menuTrigger={`{default:'click', lg: 'hover'}`}
-        >
-          <MenuItem to='/crafted/account/overview' title='Overview' hasBullet={true} />
-          <MenuItem to='/crafted/account/settings' title='Settings' hasBullet={true} />
-        </MenuInnerWithSub>
+																{/*end:Menu link*/}
+															</div>
+															{/*end:Menu item*/}
+														</div>
+														{/*end:Col*/}
 
-        {/* ERRORS */}
-        <MenuInnerWithSub
-          title='Errors'
-          to='/error'
-          fontIcon='bi-sticky'
-          hasArrow={true}
-          menuPlacement='right-start'
-          menuTrigger={`{default:'click', lg: 'hover'}`}
-        >
-          <MenuItem to='/error/404' title='Error 404' hasBullet={true} />
-          <MenuItem to='/error/500' title='Error 500' hasBullet={true} />
-        </MenuInnerWithSub>
 
-        {/* Widgets */}
-        <MenuInnerWithSub
-          title='Widgets'
-          to='/crafted/widgets'
-          fontIcon='bi-layers'
-          hasArrow={true}
-          menuPlacement='right-start'
-          menuTrigger={`{default:'click', lg: 'hover'}`}
-        >
-          <MenuItem to='/crafted/widgets/lists' title='Lists' hasBullet={true} />
-          <MenuItem to='/crafted/widgets/statistics' title='Statistics' hasBullet={true} />
-          <MenuItem to='/crafted/widgets/charts' title='Charts' hasBullet={true} />
-          <MenuItem to='/crafted/widgets/mixed' title='Mixed' hasBullet={true} />
-          <MenuItem to='/crafted/widgets/tables' title='Tables' hasBullet={true} />
-          <MenuItem to='/crafted/widgets/feeds' title='Feeds' hasBullet={true} />
-        </MenuInnerWithSub>
+													</div>
+													{/*end:Row*/}
+												</div>
+												{/*end:Tab pane*/}
+												{/*begin:Tab pane*/}
+												<div className="tab-pane w-lg-350px" id="kt_app_header_menu_pages_account">
+													{/*begin:Row*/}
+													<div className="row">
+														{/*begin:Col*/}
+														<div className="col-lg-12 mb-3">
+															{/*begin:Menu item*/}
+															<div className="menu-item p-0 m-0">
+																{/*begin:Menu link*/}
+																<a href="#0"
+																	className="menu-link check justify-content-between">
+																	<span
+																		className="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																		<i
+																			className="ki-duotone ki-element-11 text-primary fs-1">
+																			<span className="path1"></span>
+																			<span className="path2"></span>
+																			<span className="path3"></span>
+																			<span className="path4"></span>
+																		</i>
+																	</span>
+																	<span className="d-flex flex-column"
+																		style={{marginLeft: "-45px"}}>
+																		<span className="fs-6 fw-bold text-gray-800">Accéder
+																			au cours</span>
+																		<span className="fs-7 fw-semibold text-muted">20
+																			Élèves</span>
+																	</span>
+																	<div
+																		className="progress w-100px h-7px bg-warning bg-opacity-50 mt-7">
+																		<div className="progress-bar bg-warning"
+																			role="progressbar" style={{width: "15%"}}></div>
+																	</div>
+																</a>
+																{/*end:Menu link*/}
+															</div>
+															{/*end:Menu item*/}
+														</div>
+														{/*end:Col*/}
+
+
+													</div>
+													{/*end:Row*/}
+												</div>
+												{/*end:Tab pane*/}
+												{/*begin:Tab pane*/}
+												<div className="tab-pane w-lg-350px"
+													id="kt_app_header_menu_pages_authentication">
+													{/*begin:Row*/}
+													<div className="row">
+														{/*begin:Col*/}
+														<div className="col-lg-12 mb-3">
+															{/*begin:Menu link*/}
+															<a href="#0"
+																className="menu-link check justify-content-between">
+																<span
+																	className="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																	<i
+																		className="ki-duotone ki-element-11 text-primary fs-1">
+																		<span className="path1"></span>
+																		<span className="path2"></span>
+																		<span className="path3"></span>
+																		<span className="path4"></span>
+																	</i>
+																</span>
+																<span className="d-flex flex-column"
+																	style={{marginLeft: "-45px"}}>																		
+																	<span className="fs-6 fw-bold text-gray-800">Accéder au
+																		cours</span>
+																	<span className="fs-7 fw-semibold text-muted">18
+																		Élèves</span>
+																</span>
+																<div
+																	className="progress w-100px h-7px bg-primary bg-opacity-50 mt-7">
+																	<div className="progress-bar bg-primary"
+																		role="progressbar" style={{width: "576%"}}></div>
+																</div>
+															</a>
+															{/*end:Menu link*/}
+														</div>
+														{/*end:Col*/}
+
+
+													</div>
+													{/*end:Row*/}
+												</div>
+												{/*end:Tab pane*/}
+											</div>
+											{/*end:Tab content*/}
+										</div>
+										{/*end:Pages menu*/}
       </MenuInnerWithSub>
 
       <MenuInnerWithSub title='Apps' to='/apps' menuPlacement='bottom-start' menuTrigger='click'>
